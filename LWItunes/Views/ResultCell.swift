@@ -26,11 +26,21 @@ struct ResultCell: View {
                 }
                 Spacer()
             }
+            HStack{
+                Button("Click here for Media", action: {
+                    open(link: result.trackViewUrl)
+                })
+                .font(.body)
+                .foregroundColor(.blue)
+            }
+            .padding([.leading, .trailing])
         }
     }
     
     private func open(link lk : String){
-        
+        if let link = URL(string: lk){
+            UIApplication.shared.open(link)
+        }
     }
 }
 
