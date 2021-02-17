@@ -64,5 +64,7 @@ struct ContentView <Network : Fetchable> : View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView<MockEndPoint>()
+        
+        ContentView<MockEndPoint>().preferredColorScheme(.dark)
     }
 }

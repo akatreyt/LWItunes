@@ -40,6 +40,7 @@
 		1CAC625C25DCCEAA00F8667A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC625B25DCCEAA00F8667A /* ListView.swift */; };
 		1CAC626125DCCEB500F8667A /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC626025DCCEB500F8667A /* NoDataView.swift */; };
 		1CAC626625DCCEC600F8667A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC626525DCCEC600F8667A /* LoadingView.swift */; };
+		1CAC626E25DCD25C00F8667A /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC626D25DCD25C00F8667A /* ResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		1CAC625B25DCCEAA00F8667A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		1CAC626025DCCEB500F8667A /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		1CAC626525DCCEC600F8667A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1CAC626D25DCD25C00F8667A /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				1CAC626025DCCEB500F8667A /* NoDataView.swift */,
 				1CAC626525DCCEC600F8667A /* LoadingView.swift */,
 				1CAC61AF25DCB3A200F8667A /* ContentView.swift */,
+				1CAC626D25DCD25C00F8667A /* ResultCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				1CAC622D25DCB77700F8667A /* PlistStorable.swift in Sources */,
 				1CAC61B725DCB3A300F8667A /* Persistence.swift in Sources */,
 				1CAC623925DCBB6300F8667A /* APIReturn.swift in Sources */,
+				1CAC626E25DCD25C00F8667A /* ResultCell.swift in Sources */,
 				1CAC622725DCB74A00F8667A /* Storable.swift in Sources */,
 				1CAC61B025DCB3A200F8667A /* ContentView.swift in Sources */,
 				1CAC621E25DCB6F200F8667A /* Favorable.swift in Sources */,

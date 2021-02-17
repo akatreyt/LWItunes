@@ -36,7 +36,7 @@ struct Result : Decodable, Identifiable{
     let discCount : Int
     let discNumber : Int
     let trackCount : Int
-    let  trackNumber : Int
+    let trackNumber : Int
     let trackTimeMillis : Int
     let country : String
     let currency : String
