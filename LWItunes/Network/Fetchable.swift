@@ -8,5 +8,7 @@
 import Foundation
 
 protocol Fetchable {
+    init()
+    var isFetching : Bool { get }
     func fetchFrom(endpoint ep : EndPoint, forTerm term : String) throws -> APIReturn
 }

@@ -11,12 +11,18 @@ private enum MockFileLocations : String{
     case TestResults = "result1s.json"
 }
 
-struct MockEndPoint : Fetchable{
+class MockEndPoint : Fetchable{
+    var isFetching: Bool = false
+    
+    required init() {}
+    
     func fetchFrom(endpoint ep: EndPoint, forTerm term: String) throws -> APIReturn {
         do{
+            isFetching = true
             let path = Bundle.main.bundleURL.appendingPathComponent(MockFileLocations.TestResults.rawValue)
             let data = try Data.init(contentsOf: path)
             let testResults = try JSONDecoder().decode(APIReturn.self, from: data)
+            isFetching = false
             return testResults
         }catch{
             fatalError()
