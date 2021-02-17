@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct ListView: View {
-    var results : [Result]
+    var mediaResults : [MediaResult]
     
     var body: some View {
         VStack{
             List {
-                ForEach(results) { result in
-                    ResultCell(result: result)
+                ForEach(mediaResults) { result in
+                    ResultCell(mediaResult: result)
                 }
             }
-            Text("\(results.count) Results")
+            Text("\(mediaResults.count) Results")
         }
     }
 }
 
-
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        let results = try! MockEndPoint().fetchFrom(endpoint: EndPoint.search, forTerm: "test")
-        ListView(results: results.results)
+        let results = MockNetwork().getMockData()
         
-        ListView(results: results.results).preferredColorScheme(.dark)
+        ListView(mediaResults: results.results)
+
+        ListView(mediaResults: results.results).preferredColorScheme(.dark)
     }
 }

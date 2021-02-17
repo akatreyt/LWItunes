@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Result : Decodable, Identifiable{
+struct MediaResult : Decodable, Identifiable{
     let id = UUID()
 
     let wrapperType : String

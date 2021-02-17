@@ -12,7 +12,7 @@ class ContentViewModel<Network : Fetchable> : ObservableObject{
     
     private var apiReturn : APIReturn?
     
-    public var returnData : [Result]?{
+    public var returnData : [MediaResult]?{
         get{
             if let _apiReturn = apiReturn{
                 return _apiReturn.results
@@ -26,12 +26,21 @@ class ContentViewModel<Network : Fetchable> : ObservableObject{
     
     @Published public var networkIsFetching : Bool = false
     
-  
+    
     public func search(){
         do{
             networkIsFetching = true
-            apiReturn = try network.fetchFrom(endpoint: EndPoint.search,
-                                           forTerm: searchTerm)
+            try network.fetchFrom(endpoint: EndPoint.search,
+                                  forTerm: searchTerm,
+                                  completionHandler: { [weak self] result in
+                                    switch result{
+                                    
+                                    case .success(let apiResults):
+                                        self?.apiReturn = apiResults
+                                    case .failure(let error):
+                                        print(error)
+                                    }
+                                  })
             
             networkIsFetching = false
         }catch{

@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct ResultCell: View {
-    let result : Result
+    let mediaResult : MediaResult
     
     var body: some View {
         VStack{
@@ -17,10 +17,10 @@ struct ResultCell: View {
                 Image(systemName: "arrow.up.message")
                     .frame(width:50, height:50)
                 VStack(alignment: .leading){
-                    Text("\(result.trackName)")
+                    Text("\(mediaResult.trackName)")
                         .fontWeight(.medium)
                         .font(.title)
-                    Text("\(result.primaryGenreName)")
+                    Text("\(mediaResult.primaryGenreName)")
                         .fontWeight(.light)
                         .font(.body)
                 }
@@ -28,7 +28,7 @@ struct ResultCell: View {
             }
             HStack{
                 Button("Click here for Media", action: {
-                    open(link: result.trackViewUrl)
+                    open(link: mediaResult.trackViewUrl)
                 })
                 .font(.body)
                 .foregroundColor(.blue)
@@ -47,10 +47,10 @@ struct ResultCell: View {
 
 struct ResultCell_Previews: PreviewProvider {
     static var previews: some View {
-        let results = try! MockEndPoint().fetchFrom(endpoint: EndPoint.search, forTerm: "test")
+        let apiResults = MockNetwork().getMockData()
         
-        ResultCell(result: results.results[0])
+        ResultCell(mediaResult: apiResults.results[0])
         
-        ResultCell(result: results.results[0]).preferredColorScheme(.dark)
+        ResultCell(mediaResult: apiResults.results[0]).preferredColorScheme(.dark)
     }
 }

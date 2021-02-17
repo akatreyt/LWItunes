@@ -33,7 +33,7 @@ struct ContentView <Network : Fetchable> : View {
                     
                     if let returnData = viewModel.returnData{
                         if returnData.count > 0{
-                            ListView(results: returnData)
+                            ListView(mediaResults: returnData)
                         }else{
                             NoDataView()
                         }
@@ -49,8 +49,8 @@ struct ContentView <Network : Fetchable> : View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView<MockEndPoint>()
+        ContentView<MockNetwork>()
         
-        ContentView<MockEndPoint>().preferredColorScheme(.dark)
+        ContentView<MockNetwork>().preferredColorScheme(.dark)
     }
 }

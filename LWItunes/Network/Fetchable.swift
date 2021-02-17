@@ -10,5 +10,7 @@ import Foundation
 protocol Fetchable {
     init()
     var isFetching : Bool { get }
-    func fetchFrom(endpoint ep : EndPoint, forTerm term : String) throws -> APIReturn
+    func fetchFrom(endpoint ep : EndPoint,
+                   forTerm term : String,
+                   completionHandler comp : @escaping (Result<APIReturn, Error>) -> Void) throws
 }

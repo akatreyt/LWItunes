@@ -9,5 +9,5 @@ import Foundation
 
 struct APIReturn : Decodable{
     let resultCount : Int
-    let results : [Result]
+    let results : [MediaResult]
 }
