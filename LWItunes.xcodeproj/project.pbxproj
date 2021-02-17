@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CAC61AE25DCB3A200F8667A /* LWItunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */; };
+		1CAC61B025DCB3A200F8667A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61AF25DCB3A200F8667A /* ContentView.swift */; };
+		1CAC61B225DCB3A300F8667A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CAC61B125DCB3A300F8667A /* Assets.xcassets */; };
+		1CAC61B525DCB3A300F8667A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CAC61B425DCB3A300F8667A /* Preview Assets.xcassets */; };
+		1CAC61B725DCB3A300F8667A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61B625DCB3A300F8667A /* Persistence.swift */; };
+		1CAC61BA25DCB3A300F8667A /* LWItunes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61B825DCB3A300F8667A /* LWItunes.xcdatamodeld */; };
+		1CAC61C525DCB3A300F8667A /* LWItunesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61C425DCB3A300F8667A /* LWItunesTests.swift */; };
+		1CAC61D025DCB3A300F8667A /* LWItunesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61CF25DCB3A300F8667A /* LWItunesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1CAC61C125DCB3A300F8667A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CAC61A225DCB3A200F8667A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CAC61A925DCB3A200F8667A;
+			remoteInfo = LWItunes;
+		};
+		1CAC61CC25DCB3A300F8667A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CAC61A225DCB3A200F8667A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CAC61A925DCB3A200F8667A;
+			remoteInfo = LWItunes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1CAC61AA25DCB3A200F8667A /* LWItunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LWItunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWItunesApp.swift; sourceTree = "<group>"; };
+		1CAC61AF25DCB3A200F8667A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1CAC61B125DCB3A300F8667A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1CAC61B425DCB3A300F8667A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1CAC61B625DCB3A300F8667A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		1CAC61B925DCB3A300F8667A /* LWItunes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LWItunes.xcdatamodel; sourceTree = "<group>"; };
+		1CAC61BB25DCB3A300F8667A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CAC61C025DCB3A300F8667A /* LWItunesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LWItunesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CAC61C425DCB3A300F8667A /* LWItunesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWItunesTests.swift; sourceTree = "<group>"; };
+		1CAC61C625DCB3A300F8667A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CAC61CB25DCB3A300F8667A /* LWItunesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LWItunesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CAC61CF25DCB3A300F8667A /* LWItunesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWItunesUITests.swift; sourceTree = "<group>"; };
+		1CAC61D125DCB3A300F8667A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CAC61A725DCB3A200F8667A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CAC61BD25DCB3A300F8667A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CAC61C825DCB3A300F8667A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CAC61A125DCB3A200F8667A = {
+			isa = PBXGroup;
+			children = (
+				1CAC61AC25DCB3A200F8667A /* LWItunes */,
+				1CAC61C325DCB3A300F8667A /* LWItunesTests */,
+				1CAC61CE25DCB3A300F8667A /* LWItunesUITests */,
+				1CAC61AB25DCB3A200F8667A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1CAC61AB25DCB3A200F8667A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC61AA25DCB3A200F8667A /* LWItunes.app */,
+				1CAC61C025DCB3A300F8667A /* LWItunesTests.xctest */,
+				1CAC61CB25DCB3A300F8667A /* LWItunesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CAC61AC25DCB3A200F8667A /* LWItunes */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */,
+				1CAC61AF25DCB3A200F8667A /* ContentView.swift */,
+				1CAC61B125DCB3A300F8667A /* Assets.xcassets */,
+				1CAC61B625DCB3A300F8667A /* Persistence.swift */,
+				1CAC61BB25DCB3A300F8667A /* Info.plist */,
+				1CAC61B825DCB3A300F8667A /* LWItunes.xcdatamodeld */,
+				1CAC61B325DCB3A300F8667A /* Preview Content */,
+			);
+			path = LWItunes;
+			sourceTree = "<group>";
+		};
+		1CAC61B325DCB3A300F8667A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC61B425DCB3A300F8667A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1CAC61C325DCB3A300F8667A /* LWItunesTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC61C425DCB3A300F8667A /* LWItunesTests.swift */,
+				1CAC61C625DCB3A300F8667A /* Info.plist */,
+			);
+			path = LWItunesTests;
+			sourceTree = "<group>";
+		};
+		1CAC61CE25DCB3A300F8667A /* LWItunesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC61CF25DCB3A300F8667A /* LWItunesUITests.swift */,
+				1CAC61D125DCB3A300F8667A /* Info.plist */,
+			);
+			path = LWItunesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CAC61A925DCB3A200F8667A /* LWItunes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CAC61D425DCB3A300F8667A /* Build configuration list for PBXNativeTarget "LWItunes" */;
+			buildPhases = (
+				1CAC61A625DCB3A200F8667A /* Sources */,
+				1CAC61A725DCB3A200F8667A /* Frameworks */,
+				1CAC61A825DCB3A200F8667A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LWItunes;
+			productName = LWItunes;
+			productReference = 1CAC61AA25DCB3A200F8667A /* LWItunes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1CAC61BF25DCB3A300F8667A /* LWItunesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CAC61D725DCB3A300F8667A /* Build configuration list for PBXNativeTarget "LWItunesTests" */;
+			buildPhases = (
+				1CAC61BC25DCB3A300F8667A /* Sources */,
+				1CAC61BD25DCB3A300F8667A /* Frameworks */,
+				1CAC61BE25DCB3A300F8667A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CAC61C225DCB3A300F8667A /* PBXTargetDependency */,
+			);
+			name = LWItunesTests;
+			productName = LWItunesTests;
+			productReference = 1CAC61C025DCB3A300F8667A /* LWItunesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1CAC61CA25DCB3A300F8667A /* LWItunesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CAC61DA25DCB3A300F8667A /* Build configuration list for PBXNativeTarget "LWItunesUITests" */;
+			buildPhases = (
+				1CAC61C725DCB3A300F8667A /* Sources */,
+				1CAC61C825DCB3A300F8667A /* Frameworks */,
+				1CAC61C925DCB3A300F8667A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CAC61CD25DCB3A300F8667A /* PBXTargetDependency */,
+			);
+			name = LWItunesUITests;
+			productName = LWItunesUITests;
+			productReference = 1CAC61CB25DCB3A300F8667A /* LWItunesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CAC61A225DCB3A200F8667A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					1CAC61A925DCB3A200F8667A = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					1CAC61BF25DCB3A300F8667A = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 1CAC61A925DCB3A200F8667A;
+					};
+					1CAC61CA25DCB3A300F8667A = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 1CAC61A925DCB3A200F8667A;
+					};
+				};
+			};
+			buildConfigurationList = 1CAC61A525DCB3A200F8667A /* Build configuration list for PBXProject "LWItunes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1CAC61A125DCB3A200F8667A;
+			productRefGroup = 1CAC61AB25DCB3A200F8667A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CAC61A925DCB3A200F8667A /* LWItunes */,
+				1CAC61BF25DCB3A300F8667A /* LWItunesTests */,
+				1CAC61CA25DCB3A300F8667A /* LWItunesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CAC61A825DCB3A200F8667A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CAC61B525DCB3A300F8667A /* Preview Assets.xcassets in Resources */,
+				1CAC61B225DCB3A300F8667A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CAC61BE25DCB3A300F8667A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CAC61C925DCB3A300F8667A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CAC61A625DCB3A200F8667A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CAC61BA25DCB3A300F8667A /* LWItunes.xcdatamodeld in Sources */,
+				1CAC61B725DCB3A300F8667A /* Persistence.swift in Sources */,
+				1CAC61B025DCB3A200F8667A /* ContentView.swift in Sources */,
+				1CAC61AE25DCB3A200F8667A /* LWItunesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CAC61BC25DCB3A300F8667A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CAC61C525DCB3A300F8667A /* LWItunesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CAC61C725DCB3A300F8667A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CAC61D025DCB3A300F8667A /* LWItunesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1CAC61C225DCB3A300F8667A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CAC61A925DCB3A200F8667A /* LWItunes */;
+			targetProxy = 1CAC61C125DCB3A300F8667A /* PBXContainerItemProxy */;
+		};
+		1CAC61CD25DCB3A300F8667A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CAC61A925DCB3A200F8667A /* LWItunes */;
+			targetProxy = 1CAC61CC25DCB3A300F8667A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1CAC61D225DCB3A300F8667A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1CAC61D325DCB3A300F8667A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1CAC61D525DCB3A300F8667A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"LWItunes/Preview Content\"";
+				DEVELOPMENT_TEAM = 7LZTM7DE94;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LWItunes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.garyTartt.LWItunes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1CAC61D625DCB3A300F8667A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"LWItunes/Preview Content\"";
+				DEVELOPMENT_TEAM = 7LZTM7DE94;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LWItunes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.garyTartt.LWItunes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1CAC61D825DCB3A300F8667A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LZTM7DE94;
+				INFOPLIST_FILE = LWItunesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.garyTartt.LWItunesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LWItunes.app/LWItunes";
+			};
+			name = Debug;
+		};
+		1CAC61D925DCB3A300F8667A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LZTM7DE94;
+				INFOPLIST_FILE = LWItunesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.garyTartt.LWItunesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LWItunes.app/LWItunes";
+			};
+			name = Release;
+		};
+		1CAC61DB25DCB3A300F8667A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LZTM7DE94;
+				INFOPLIST_FILE = LWItunesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.garyTartt.LWItunesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LWItunes;
+			};
+			name = Debug;
+		};
+		1CAC61DC25DCB3A300F8667A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7LZTM7DE94;
+				INFOPLIST_FILE = LWItunesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.garyTartt.LWItunesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LWItunes;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CAC61A525DCB3A200F8667A /* Build configuration list for PBXProject "LWItunes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CAC61D225DCB3A300F8667A /* Debug */,
+				1CAC61D325DCB3A300F8667A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CAC61D425DCB3A300F8667A /* Build configuration list for PBXNativeTarget "LWItunes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CAC61D525DCB3A300F8667A /* Debug */,
+				1CAC61D625DCB3A300F8667A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CAC61D725DCB3A300F8667A /* Build configuration list for PBXNativeTarget "LWItunesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CAC61D825DCB3A300F8667A /* Debug */,
+				1CAC61D925DCB3A300F8667A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CAC61DA25DCB3A300F8667A /* Build configuration list for PBXNativeTarget "LWItunesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CAC61DB25DCB3A300F8667A /* Debug */,
+				1CAC61DC25DCB3A300F8667A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1CAC61B825DCB3A300F8667A /* LWItunes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1CAC61B925DCB3A300F8667A /* LWItunes.xcdatamodel */,
+			);
+			currentVersion = 1CAC61B925DCB3A300F8667A /* LWItunes.xcdatamodel */;
+			path = LWItunes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1CAC61A225DCB3A200F8667A /* Project object */;
+}
