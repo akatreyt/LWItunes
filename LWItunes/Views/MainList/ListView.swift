@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ListView: View {
-    var mediaResults : SortedMediaInfo
+    var viewModel : DashboardViewModelProtocol
     
     private var mediaKeys : [String]{
         get{
-            Array(mediaResults.keys).sorted(by: <)
+            Array(viewModel.sortedData.keys).sorted(by: <)
         }
     }
     
@@ -23,28 +23,28 @@ struct ListView: View {
                     Section(header: Text(key)
                                 .font(.footnote),
                             content: {
-                                ForEach(mediaResults[key]!) { result in
-                                    ResultCell(mediaResult: result)
+                                ForEach(viewModel.sortedData[key]!) { result in
+                                    ResultCell(mediaResult: result,
+                                               storageManager: viewModel.storageManger)
                                 }
                             })
                 }
             }
-            Text("\(mediaResults.count) Results")
         }
     }
 }
 
 struct ListView_Previews: PreviewProvider {
-    static var mockData : SortedMediaInfo {
+    static var viewModel : DashboardViewModel<MockNetwork, PlistStorage> {
         get{
-            let viewModel = DashboardViewModel<MockNetwork>()
+            let viewModel = DashboardViewModel<MockNetwork, PlistStorage>()
             viewModel.search()
-            return viewModel.sortedData
+            return viewModel
         }
     }
     
     static var previews: some View {
-        ListView(mediaResults: mockData)
-        ListView(mediaResults: mockData).preferredColorScheme(.dark)
+        ListView(viewModel: viewModel)
+        ListView(viewModel: viewModel).preferredColorScheme(.dark)
     }
 }

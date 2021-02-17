@@ -9,10 +9,31 @@ import SwiftUI
 
 typealias SortedMediaInfo = [String: [MediaResult]]
 
-class DashboardViewModel<Network : Fetchable> : ObservableObject{
+class DashboardViewModel<Network : Fetchable, Storage : Storable> : ObservableObject, DashboardViewModelProtocol{
+    
+    init() {
+        self.storageManger = Storage()
+        self.favorites = [MediaResult]()
+        
+        updateFavorites()
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateFavorites),
+                                               name: .UpdateFavorites,
+                                               object: nil)
+        
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    public var storageManger: Storable
+    
     private var network = Network()
     
-    private var apiReturn : APIReturn?{
+    public private(set) var apiReturn : APIReturn?{
         didSet{
             resetSortedData()
         }
@@ -20,18 +41,11 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject{
     
     public private(set) var mediaKeys = [String]()
 
-    public var sortedData = SortedMediaInfo()
-    
-    public var returnData : [MediaResult]?{
-        get{
-            if let _apiReturn = apiReturn{
-                return _apiReturn.results
-            }
-            return nil
-        }
-    }
-    
+    public private(set) var sortedData = SortedMediaInfo()
+        
     public let filterResetKey = "Reset"
+    
+    @Published public private(set) var favorites : [MediaResult]
     
     @Published public var searchTerm = ""
     
@@ -80,6 +94,14 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject{
             var tmpData = SortedMediaInfo()
             tmpData[key] = sortedData[key]
             sortedData = tmpData
+        }
+    }
+    
+    @objc private func updateFavorites(){
+        do{
+            self.favorites = try storageManger.getFavorites()
+        }catch{
+            fatalError()
         }
     }
 }

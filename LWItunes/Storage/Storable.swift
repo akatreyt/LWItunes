@@ -8,5 +8,7 @@
 import Foundation
 
 protocol Storable {
-    static func save(favorable fav : Favorable) throws
+    init()
+    func save(favorable fav : MediaResult) throws
+    func getFavorites() throws -> [MediaResult]
 }

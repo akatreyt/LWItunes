@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol Favorable {
-    func toggleFarovite<S : Storable>(usingStorable storable : S) throws
+protocol Favorable  {
+    func checkIfFavorites(media : MediaResult) -> Bool
+    var favorites : [MediaResult] { get }
 }

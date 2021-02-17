@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct MediaResult : Decodable, Identifiable{
+struct MediaResult : Codable, Identifiable{
     let id = UUID()
 
     let wrapperType : String
@@ -44,9 +44,3 @@ struct MediaResult : Decodable, Identifiable{
     let isStreamable : Bool
 }
 
-
-extension Result : Favorable{
-    func toggleFarovite<S>(usingStorable storable: S) throws where S : Storable {
-        try S.save(favorable: self)
-    }
-}

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ResultCell: View {
     let mediaResult : MediaResult
+    let storageManager : Storable
     
     var body: some View {
         VStack{
@@ -27,11 +28,24 @@ struct ResultCell: View {
                 Spacer()
             }
             HStack{
-                Button("Click here for Media", action: {
-                    open(link: mediaResult.trackViewUrl)
-                })
-                .font(.body)
-                .foregroundColor(.blue)
+                HStack(){
+                    Button("Click here for Media", action: {
+                        open(link: mediaResult.trackViewUrl)
+                    })
+                    .buttonStyle(BorderlessButtonStyle())
+                    .font(.body)
+                    .foregroundColor(.blue)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        toggleFavorite(onMedia: mediaResult)
+                    }) {
+                        Image(systemName: "star.circle")
+                            .foregroundColor(.blue)
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                }
             }
             .padding([.leading, .trailing])
         }
@@ -42,15 +56,26 @@ struct ResultCell: View {
             UIApplication.shared.open(link)
         }
     }
+    
+    private func toggleFavorite(onMedia media : MediaResult){
+        do{
+            try storageManager.save(favorable: media)
+            
+            NotificationCenter.default.post(name: .UpdateFavorites, object: nil)
+        }catch{
+            fatalError()
+        }
+    }
 }
 
 
 struct ResultCell_Previews: PreviewProvider {
     static var previews: some View {
         let apiResults = MockNetwork().getMockData()
+        let storageManager = PlistStorage()
         
-        ResultCell(mediaResult: apiResults.results[0])
+        ResultCell(mediaResult: apiResults.results[0], storageManager: storageManager)
         
-        ResultCell(mediaResult: apiResults.results[0]).preferredColorScheme(.dark)
+        ResultCell(mediaResult: apiResults.results[0], storageManager: storageManager).preferredColorScheme(.dark)
     }
 }
