@@ -72,7 +72,8 @@ final class DashboardViewModel<Network : Fetchable> : ObservableObject, Dashboar
 
     ///
     /// This is all the keys from the sortedData. This is used
-    /// on DashboardView to pouplate the action sheet filter
+    /// on DashboardView to pouplate the action sheet filter.
+    /// Will only populate with keys that we have items for
     ///
     public private(set) var mediaKeys = [String]()
 

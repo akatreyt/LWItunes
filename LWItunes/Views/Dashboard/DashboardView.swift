@@ -36,11 +36,15 @@ struct DashboardView<Network : Fetchable> : View {
                     
                     Spacer()
                     
+                    // If an error exist, show the no data view with the error
                     if let _error = viewModel.error{
                         NoDataView(error: _error)
+                    // if we're showing only favorites we can ignore whether or not apiReturn is set
                     }else if viewModel.showOnlyFavorite{
                         ListView(viewModel: viewModel, mediaResults: viewModel.sortedData)
                     }else{
+                        // if we have an apiReturn we either have results or no results
+                        // if no results show the no data view with no error
                         if let _ = viewModel.apiReturn{
                             if viewModel.sortedData.count > 0{
                                 ListView(viewModel: viewModel, mediaResults: viewModel.sortedData)
@@ -48,6 +52,7 @@ struct DashboardView<Network : Fetchable> : View {
                                 NoDataView()
                             }
                         }else{
+                            // if there isn't an error, not showing favorites, no apiReturn show the search screen
                             SearchView()
                         }
                     }
@@ -65,6 +70,8 @@ struct DashboardView<Network : Fetchable> : View {
                 }
             }
         }.actionSheet(isPresented: $showFilter, content: {
+            // use the view model's media keys to create an action sheet that will
+            // allow for filtering on the current data set.
             var buttons = [ActionSheet.Button]()
             
             for i in 0..<viewModel.mediaKeys.count {
@@ -87,14 +94,17 @@ struct DashboardView<Network : Fetchable> : View {
         })
     }
     
+    // show / hide the action sheet
     private func toggleFilter(){
         showFilter = !showFilter
     }
     
+    // filter the data using the action sheet
     private func filterData(key : String){
         viewModel.filterMedia(forKey: key)
     }
     
+    // toggle show favorites or other data set
     private func toggleFavoriteView(){
         viewModel.toggleOnlyShowFavorites()
     }
