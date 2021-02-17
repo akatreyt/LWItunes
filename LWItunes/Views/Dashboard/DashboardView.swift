@@ -28,6 +28,8 @@ struct DashboardView<Network : Fetchable> : View {
                         })
                     }.padding()
                     
+                    Divider()
+                    
                     Button("Filter", action: {
                         toggleFilter()
                     }).disabled(viewModel.mediaKeys.isEmpty)
