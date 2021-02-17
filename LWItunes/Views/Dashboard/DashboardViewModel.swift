@@ -11,7 +11,6 @@ typealias SortedMediaInfo = [String: [MediaResult]]
 
 class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewModelProtocol{
     
-    
     init() {
         self.favoriteManager = FavoriteManager(withStorageType: .Plist)
         self.numberOfFavorites = self.favoriteManager.favorites.count

@@ -43,4 +43,3 @@ struct MediaResult : Codable, Identifiable{
     let primaryGenreName : String?
     let isStreamable : Bool?
 }
-

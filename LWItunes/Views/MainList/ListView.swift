@@ -10,6 +10,7 @@ import SwiftUI
 struct ListView: View {
     var viewModel : DashboardViewModelProtocol
     var mediaResults : SortedMediaInfo
+    var imageCache = ImageCache()
     
     private var mediaKeys : [String]{
         get{
@@ -26,7 +27,8 @@ struct ListView: View {
                             content: {
                                 ForEach(mediaResults[key]!) { result in
                                     ResultCell(mediaResult: result,
-                                               favoriteManager: viewModel.favoriteManager)
+                                               favoriteManager: viewModel.favoriteManager,
+                                               imageCache: imageCache)
                                 }
                             })
                 }

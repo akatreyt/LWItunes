@@ -10,6 +10,7 @@
 		1C5AB24C25DD81E300CBFFBA /* NotifcationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5AB24B25DD81E300CBFFBA /* NotifcationCenterExtension.swift */; };
 		1C5AB25125DD8A4200CBFFBA /* DashboardViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5AB25025DD8A4200CBFFBA /* DashboardViewModelProtocol.swift */; };
 		1C5AB26A25DD91B400CBFFBA /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5AB26925DD91B400CBFFBA /* FavoriteManager.swift */; };
+		1C5AB27825DDB09800CBFFBA /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5AB27725DDB09800CBFFBA /* ImageCache.swift */; };
 		1C921FE625DD77250057D0EA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61B625DCB3A300F8667A /* Persistence.swift */; };
 		1CAC61AE25DCB3A200F8667A /* LWItunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */; };
 		1CAC61B025DCB3A200F8667A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61AF25DCB3A200F8667A /* DashboardView.swift */; };
@@ -66,6 +67,7 @@
 		1C5AB24B25DD81E300CBFFBA /* NotifcationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationCenterExtension.swift; sourceTree = "<group>"; };
 		1C5AB25025DD8A4200CBFFBA /* DashboardViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelProtocol.swift; sourceTree = "<group>"; };
 		1C5AB26925DD91B400CBFFBA /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
+		1C5AB27725DDB09800CBFFBA /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		1CAC61AA25DCB3A200F8667A /* LWItunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LWItunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWItunesApp.swift; sourceTree = "<group>"; };
 		1CAC61AF25DCB3A200F8667A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		1CAC628E25DD647F00F8667A /* MainList */ = {
 			isa = PBXGroup;
 			children = (
+				1C5AB27725DDB09800CBFFBA /* ImageCache.swift */,
 				1CAC625B25DCCEAA00F8667A /* ListView.swift */,
 				1CAC626D25DCD25C00F8667A /* ResultCell.swift */,
 			);
@@ -414,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5AB27825DDB09800CBFFBA /* ImageCache.swift in Sources */,
 				1CAC625C25DCCEAA00F8667A /* ListView.swift in Sources */,
 				1CAC61BA25DCB3A300F8667A /* LWItunes.xcdatamodeld in Sources */,
 				1C5AB25125DD8A4200CBFFBA /* DashboardViewModelProtocol.swift in Sources */,

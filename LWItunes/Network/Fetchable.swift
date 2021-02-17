@@ -12,6 +12,7 @@ enum NetworkError : Error{
     case InvalidResponse
     case InvalidHTTPCode(Int)
     case ErrorDecoding(Error)
+    case ErrorDecodingImage
     case InvalidURL(String)
 }
 

@@ -11,12 +11,24 @@ import SwiftUI
 struct ResultCell: View {
     let mediaResult : MediaResult
     let favoriteManager : Favorable
+    @ObservedObject var imageCache : ImageCache
     
     var body: some View {
         VStack{
             HStack{
-                Image(systemName: "arrow.up.message")
-                    .frame(width:50, height:50)
+                if let data = checkForDataFetchIfNotFound(media: mediaResult),
+                   let image = UIImage(data: data){
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                    
+                }else{
+                    ProgressView()
+                        .padding()
+                }
+                
+                
                 VStack(alignment: .leading){
                     Text("\(mediaResult.trackName ?? "N/A")")
                         .fontWeight(.medium)
@@ -68,6 +80,29 @@ struct ResultCell: View {
             fatalError()
         }
     }
+    
+    private func checkForDataFetchIfNotFound(media : MediaResult) -> Data?{
+        if let data = imageCache.hasImageData(forMedia: mediaResult){
+            return data
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            fetchImageFor(media: media)
+        }
+    
+        return nil
+    }
+    
+    private func fetchImageFor(media : MediaResult){
+        imageCache.loadImage(forMedia: media, completion: { result in
+            switch result{
+            case .success(let media):
+                print("recieved artwork for \(media.artworkUrl100)")
+            case .failure(let error):
+                print(error)
+            }
+        })
+    }
 }
 
 
@@ -75,11 +110,14 @@ struct ResultCell_Previews: PreviewProvider {
     static var previews: some View {
         let apiResults = MockNetwork().getMockData()
         let favoriteManager = FavoriteManager(withStorageType: .Plist)
+        let imageCache = ImageCache()
         
         ResultCell(mediaResult: apiResults.results[0],
-                   favoriteManager: favoriteManager)
+                   favoriteManager: favoriteManager,
+                   imageCache: imageCache)
         
         ResultCell(mediaResult: apiResults.results[0],
-                   favoriteManager: favoriteManager).preferredColorScheme(.dark)
+                   favoriteManager: favoriteManager,
+                   imageCache: imageCache).preferredColorScheme(.dark)
     }
 }
