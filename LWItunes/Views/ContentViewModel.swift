@@ -24,7 +24,7 @@ class ContentViewModel<Network : Fetchable> : ObservableObject{
     @Published public var searchTerm = ""
     
     
-    @Published public var networkIsFetching : Bool = false
+    @Published public private(set) var networkIsFetching : Bool = false
     
     
     public func search(){
