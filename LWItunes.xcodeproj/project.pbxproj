@@ -15,6 +15,27 @@
 		1CAC61BA25DCB3A300F8667A /* LWItunes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61B825DCB3A300F8667A /* LWItunes.xcdatamodeld */; };
 		1CAC61C525DCB3A300F8667A /* LWItunesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61C425DCB3A300F8667A /* LWItunesTests.swift */; };
 		1CAC61D025DCB3A300F8667A /* LWItunesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61CF25DCB3A300F8667A /* LWItunesUITests.swift */; };
+		1CAC61E225DCB3E800F8667A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61E125DCB3E800F8667A /* Result.swift */; };
+		1CAC61E325DCB3E800F8667A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61E125DCB3E800F8667A /* Result.swift */; };
+		1CAC61EB25DCB44500F8667A /* ResultKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61EA25DCB44500F8667A /* ResultKind.swift */; };
+		1CAC61EC25DCB44500F8667A /* ResultKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61EA25DCB44500F8667A /* ResultKind.swift */; };
+		1CAC61FB25DCB49F00F8667A /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61FA25DCB49F00F8667A /* Fetchable.swift */; };
+		1CAC61FC25DCB49F00F8667A /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61FA25DCB49F00F8667A /* Fetchable.swift */; };
+		1CAC620425DCB4D400F8667A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC620325DCB4D400F8667A /* Endpoints.swift */; };
+		1CAC620525DCB4D400F8667A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC620325DCB4D400F8667A /* Endpoints.swift */; };
+		1CAC620D25DCB52A00F8667A /* MockEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC620C25DCB52A00F8667A /* MockEndPoint.swift */; };
+		1CAC620E25DCB52A00F8667A /* MockEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC620C25DCB52A00F8667A /* MockEndPoint.swift */; };
+		1CAC621425DCB55300F8667A /* result1s.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CAC621325DCB55300F8667A /* result1s.json */; };
+		1CAC621525DCB55300F8667A /* result1s.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CAC621325DCB55300F8667A /* result1s.json */; };
+		1CAC621E25DCB6F200F8667A /* Favorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC621D25DCB6F200F8667A /* Favorable.swift */; };
+		1CAC621F25DCB6F200F8667A /* Favorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC621D25DCB6F200F8667A /* Favorable.swift */; };
+		1CAC622725DCB74A00F8667A /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC622625DCB74A00F8667A /* Storable.swift */; };
+		1CAC622825DCB74A00F8667A /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC622625DCB74A00F8667A /* Storable.swift */; };
+		1CAC622D25DCB77700F8667A /* PlistStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC622C25DCB77700F8667A /* PlistStorable.swift */; };
+		1CAC622E25DCB77700F8667A /* PlistStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC622C25DCB77700F8667A /* PlistStorable.swift */; };
+		1CAC623325DCB8EA00F8667A /* tmpCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC623225DCB8EA00F8667A /* tmpCD.swift */; };
+		1CAC623425DCB8EA00F8667A /* tmpCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC623225DCB8EA00F8667A /* tmpCD.swift */; };
+		1CAC623925DCBB6300F8667A /* APIReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC623825DCBB6300F8667A /* APIReturn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +70,17 @@
 		1CAC61CB25DCB3A300F8667A /* LWItunesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LWItunesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAC61CF25DCB3A300F8667A /* LWItunesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWItunesUITests.swift; sourceTree = "<group>"; };
 		1CAC61D125DCB3A300F8667A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CAC61E125DCB3E800F8667A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		1CAC61EA25DCB44500F8667A /* ResultKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultKind.swift; sourceTree = "<group>"; };
+		1CAC61FA25DCB49F00F8667A /* Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
+		1CAC620325DCB4D400F8667A /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		1CAC620C25DCB52A00F8667A /* MockEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEndPoint.swift; sourceTree = "<group>"; };
+		1CAC621325DCB55300F8667A /* result1s.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = result1s.json; sourceTree = "<group>"; };
+		1CAC621D25DCB6F200F8667A /* Favorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorable.swift; sourceTree = "<group>"; };
+		1CAC622625DCB74A00F8667A /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		1CAC622C25DCB77700F8667A /* PlistStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistStorable.swift; sourceTree = "<group>"; };
+		1CAC623225DCB8EA00F8667A /* tmpCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmpCD.swift; sourceTree = "<group>"; };
+		1CAC623825DCBB6300F8667A /* APIReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReturn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +131,10 @@
 		1CAC61AC25DCB3A200F8667A /* LWItunes */ = {
 			isa = PBXGroup;
 			children = (
+				1CAC621C25DCB6E300F8667A /* Favorite */,
+				1CAC621225DCB53900F8667A /* MockData */,
+				1CAC61F925DCB49000F8667A /* Network */,
+				1CAC61E025DCB3C800F8667A /* Models */,
 				1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */,
 				1CAC61AF25DCB3A200F8667A /* ContentView.swift */,
 				1CAC61B125DCB3A300F8667A /* Assets.xcassets */,
@@ -134,6 +170,46 @@
 				1CAC61D125DCB3A300F8667A /* Info.plist */,
 			);
 			path = LWItunesUITests;
+			sourceTree = "<group>";
+		};
+		1CAC61E025DCB3C800F8667A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC61EA25DCB44500F8667A /* ResultKind.swift */,
+				1CAC623825DCBB6300F8667A /* APIReturn.swift */,
+				1CAC61E125DCB3E800F8667A /* Result.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		1CAC61F925DCB49000F8667A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC620325DCB4D400F8667A /* Endpoints.swift */,
+				1CAC61FA25DCB49F00F8667A /* Fetchable.swift */,
+				1CAC620C25DCB52A00F8667A /* MockEndPoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1CAC621225DCB53900F8667A /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC621325DCB55300F8667A /* result1s.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		1CAC621C25DCB6E300F8667A /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC621D25DCB6F200F8667A /* Favorable.swift */,
+				1CAC622625DCB74A00F8667A /* Storable.swift */,
+				1CAC622C25DCB77700F8667A /* PlistStorable.swift */,
+				1CAC623225DCB8EA00F8667A /* tmpCD.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +317,7 @@
 			files = (
 				1CAC61B525DCB3A300F8667A /* Preview Assets.xcassets in Resources */,
 				1CAC61B225DCB3A300F8667A /* Assets.xcassets in Resources */,
+				1CAC621425DCB55300F8667A /* result1s.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CAC621525DCB55300F8667A /* result1s.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +344,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CAC61BA25DCB3A300F8667A /* LWItunes.xcdatamodeld in Sources */,
+				1CAC61E225DCB3E800F8667A /* Result.swift in Sources */,
+				1CAC622D25DCB77700F8667A /* PlistStorable.swift in Sources */,
 				1CAC61B725DCB3A300F8667A /* Persistence.swift in Sources */,
+				1CAC623925DCBB6300F8667A /* APIReturn.swift in Sources */,
+				1CAC622725DCB74A00F8667A /* Storable.swift in Sources */,
 				1CAC61B025DCB3A200F8667A /* ContentView.swift in Sources */,
+				1CAC621E25DCB6F200F8667A /* Favorable.swift in Sources */,
+				1CAC61EB25DCB44500F8667A /* ResultKind.swift in Sources */,
+				1CAC620D25DCB52A00F8667A /* MockEndPoint.swift in Sources */,
 				1CAC61AE25DCB3A200F8667A /* LWItunesApp.swift in Sources */,
+				1CAC620425DCB4D400F8667A /* Endpoints.swift in Sources */,
+				1CAC61FB25DCB49F00F8667A /* Fetchable.swift in Sources */,
+				1CAC623325DCB8EA00F8667A /* tmpCD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +364,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CAC61FC25DCB49F00F8667A /* Fetchable.swift in Sources */,
+				1CAC61E325DCB3E800F8667A /* Result.swift in Sources */,
+				1CAC620E25DCB52A00F8667A /* MockEndPoint.swift in Sources */,
+				1CAC61EC25DCB44500F8667A /* ResultKind.swift in Sources */,
 				1CAC61C525DCB3A300F8667A /* LWItunesTests.swift in Sources */,
+				1CAC622E25DCB77700F8667A /* PlistStorable.swift in Sources */,
+				1CAC622825DCB74A00F8667A /* Storable.swift in Sources */,
+				1CAC621F25DCB6F200F8667A /* Favorable.swift in Sources */,
+				1CAC623425DCB8EA00F8667A /* tmpCD.swift in Sources */,
+				1CAC620525DCB4D400F8667A /* Endpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
