@@ -42,7 +42,7 @@ struct DashboardView<Network : Fetchable> : View {
                         
                         if let _ = viewModel.apiReturn{
                             if viewModel.sortedData.count > 0{
-                                ListView(viewModel: viewModel)
+                                ListView(viewModel: viewModel, mediaResults: viewModel.sortedData)
                             }else{
                                 NoDataView()
                             }

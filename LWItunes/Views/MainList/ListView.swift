@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     var viewModel : DashboardViewModelProtocol
+    var mediaResults : SortedMediaInfo
     
     private var mediaKeys : [String]{
         get{
@@ -23,7 +24,7 @@ struct ListView: View {
                     Section(header: Text(key)
                                 .font(.footnote),
                             content: {
-                                ForEach(viewModel.sortedData[key]!) { result in
+                                ForEach(mediaResults[key]!) { result in
                                     ResultCell(mediaResult: result,
                                                favoriteManager: viewModel.favoriteManager)
                                 }
@@ -44,7 +45,7 @@ struct ListView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        ListView(viewModel: viewModel)
-        ListView(viewModel: viewModel).preferredColorScheme(.dark)
+        ListView(viewModel: viewModel, mediaResults: viewModel.sortedData)
+        ListView(viewModel: viewModel, mediaResults: viewModel.sortedData).preferredColorScheme(.dark)
     }
 }

@@ -40,7 +40,7 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
     
     public private(set) var mediaKeys = [String]()
 
-    public private(set) var sortedData = SortedMediaInfo()
+    @Published public private(set) var sortedData = SortedMediaInfo()
         
     public let filterResetKey = "Reset"
         
