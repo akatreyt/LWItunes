@@ -23,7 +23,7 @@ class ImageCache : ObservableObject{
     
     final func loadImage(forMedia media : MediaResult, completion comp :@escaping (Result<MediaResult, NetworkError>) -> Void){
         if let imageURLStr = media.artworkUrl100{
-            if let _data = hasImageData(forMedia: media){
+            if let _ = hasImageData(forMedia: media){
                 comp(.success(media))
                 return
             }
@@ -37,10 +37,11 @@ class ImageCache : ObservableObject{
                 return
             }
             
+            #warning("this is causing a few UI issues, needs to be looked at more")
             DispatchQueue.main.async {
                 self.currentlyFetching.append(imageURLStr)
             }
-            print("fetching for \(imageURLStr)")
+
             let task = URLSession.shared.dataTask(with: url) {[weak self] (data, response, error) in
                 
                 if let idx = self?.currentlyFetching.firstIndex(of: imageURLStr){
@@ -64,11 +65,11 @@ class ImageCache : ObservableObject{
                 
                 if let _ = UIImage(data: data){
                     
+                    #warning("this is causing a few UI issues, needs to be looked at more")
                     DispatchQueue.main.async {
                         self?.imageCache[imageURLStr] = data
                     }
                     
-                    print("fetchins size is \(self?.currentlyFetching.count)")
                     comp(.success(media))
                     return
                 }
