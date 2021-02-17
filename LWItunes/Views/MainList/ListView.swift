@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct ListView: View {
-    var mediaResults : [MediaResult]
+    var mediaResults : SortedMediaInfo
+    
+    private var mediaKeys : [String]{
+        get{
+            Array(mediaResults.keys).sorted(by: <)
+        }
+    }
     
     var body: some View {
         VStack{
             List {
-                ForEach(mediaResults) { result in
-                    ResultCell(mediaResult: result)
+                ForEach(mediaKeys, id: \.self) { key in
+                    Section(header: Text(key)
+                                .font(.footnote),
+                            content: {
+                                ForEach(mediaResults[key]!) { result in
+                                    ResultCell(mediaResult: result)
+                                }
+                            })
                 }
             }
             Text("\(mediaResults.count) Results")
@@ -23,11 +35,16 @@ struct ListView: View {
 }
 
 struct ListView_Previews: PreviewProvider {
+    static var mockData : SortedMediaInfo {
+        get{
+            let viewModel = DashboardViewModel<MockNetwork>()
+            viewModel.search()
+            return viewModel.sortedData
+        }
+    }
+    
     static var previews: some View {
-        let results = MockNetwork().getMockData()
-        
-        ListView(mediaResults: results.results)
-
-        ListView(mediaResults: results.results).preferredColorScheme(.dark)
+        ListView(mediaResults: mockData)
+        ListView(mediaResults: mockData).preferredColorScheme(.dark)
     }
 }

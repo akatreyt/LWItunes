@@ -7,10 +7,20 @@
 
 import SwiftUI
 
+typealias SortedMediaInfo = [String: [MediaResult]]
+
 class DashboardViewModel<Network : Fetchable> : ObservableObject{
     private var network = Network()
     
-    private var apiReturn : APIReturn?
+    private var apiReturn : APIReturn?{
+        didSet{
+            resetSortedData()
+        }
+    }
+    
+    public private(set) var mediaKeys = [String]()
+
+    public var sortedData = SortedMediaInfo()
     
     public var returnData : [MediaResult]?{
         get{
@@ -21,11 +31,11 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject{
         }
     }
     
+    public let filterResetKey = "Reset"
+    
     @Published public var searchTerm = ""
     
-    
     @Published public private(set) var networkIsFetching : Bool = false
-    
     
     public func search(){
         do{
@@ -45,6 +55,31 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject{
             networkIsFetching = false
         }catch{
             print(error)
+        }
+    }
+    
+    private func sort(data : [MediaResult]) -> [String : [MediaResult]]{
+        var tmpSortedData =  [String : [MediaResult]]()
+        
+        for result in data{
+            let kind = result.kind
+            (tmpSortedData[kind.uppercased(), default: []]).append(result)
+        }
+        
+        return tmpSortedData
+    }
+    
+    private func resetSortedData(){
+        sortedData = sort(data: self.apiReturn!.results)
+        mediaKeys = sortedData.keys.sorted(by: <)
+    }
+    
+    public func filterMedia(forKey key : String){
+        resetSortedData()
+        if key != filterResetKey{
+            var tmpData = SortedMediaInfo()
+            tmpData[key] = sortedData[key]
+            sortedData = tmpData
         }
     }
 }

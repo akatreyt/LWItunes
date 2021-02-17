@@ -11,6 +11,7 @@ import Combine
 
 struct DashboardView<Network : Fetchable> : View {
     @ObservedObject var viewModel = DashboardViewModel<Network>()
+    @State private var showFilter = false
     
     var body: some View {
         ZStack{
@@ -27,13 +28,17 @@ struct DashboardView<Network : Fetchable> : View {
                         })
                     }.padding()
                     
+                    Button("Filter", action: {
+                        toggleFilter()
+                    }).disabled(viewModel.mediaKeys.isEmpty)
+                    
                     Divider()
                     
                     Spacer()
                     
                     if let returnData = viewModel.returnData{
                         if returnData.count > 0{
-                            ListView(mediaResults: returnData)
+                            ListView(mediaResults: viewModel.sortedData)
                         }else{
                             NoDataView()
                         }
@@ -43,7 +48,35 @@ struct DashboardView<Network : Fetchable> : View {
                     Spacer()
                 }
             }
-        }
+        }.actionSheet(isPresented: $showFilter, content: {
+            var buttons = [ActionSheet.Button]()
+            
+            for i in 0..<viewModel.mediaKeys.count {
+                let button: ActionSheet.Button = .default(Text(viewModel.mediaKeys[i])) {
+                    filterData(key: viewModel.mediaKeys[i])
+                }
+                buttons.append(button)
+            }
+            
+            let button: ActionSheet.Button = .destructive(Text(viewModel.filterResetKey)) {
+                filterData(key: viewModel.filterResetKey)
+            }
+            buttons.append(button)
+            
+            buttons.append(.cancel())
+            
+            return ActionSheet(title: Text("Choose a filter"),
+                               message: Text("Filter the media list based on media kind"),
+                               buttons: buttons)
+        })
+    }
+    
+    private func toggleFilter(){
+        showFilter = !showFilter
+    }
+    
+    private func filterData(key : String){
+        viewModel.filterMedia(forKey: key)
     }
 }
 
