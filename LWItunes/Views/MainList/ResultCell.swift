@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-
 struct ResultCell: View {
     let mediaResult : MediaResult
     let favoriteManager : Favorable
     @ObservedObject var imageCache : ImageCache
+    
+    @State var mediaIsFavorite : Bool = false
     
     var body: some View {
         VStack{
@@ -56,12 +57,14 @@ struct ResultCell: View {
                         toggleFavorite(onMedia: mediaResult)
                     }) {
                         Image(systemName: "star.circle")
-                            .foregroundColor(favoriteManager.checkIfFavorites(media: mediaResult) ? .yellow : .blue)
+                            .foregroundColor(mediaIsFavorite ? .yellow : .blue)
                     }
                     .buttonStyle(BorderlessButtonStyle())
                 }
             }
             .padding([.leading, .trailing])
+        }.onAppear{
+            mediaIsFavorite = favoriteManager.checkIfFavorites(media: mediaResult)
         }
     }
     
@@ -74,8 +77,8 @@ struct ResultCell: View {
     private func toggleFavorite(onMedia media : MediaResult){
         do{
             try favoriteManager.save(favorable: media)
-            
             NotificationCenter.default.post(name: .UpdateFavorites, object: nil)
+            mediaIsFavorite = favoriteManager.checkIfFavorites(media: mediaResult)
         }catch{
             fatalError()
         }

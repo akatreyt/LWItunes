@@ -53,8 +53,6 @@ struct DashboardView<Network : Fetchable> : View {
                     }
                     Spacer()
                     HStack{
-                        Text("\(viewModel.numberOfFavorites) Favorites")
-                        Spacer()
                         Button(viewModel.showOnlyFavorite ? "Show all results" : "Show Favorites",
                                action: {
                                 toggleFavoriteView()

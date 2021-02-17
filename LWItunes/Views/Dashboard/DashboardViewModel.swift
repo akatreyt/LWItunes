@@ -51,7 +51,7 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
     
     @Published public private(set) var networkIsFetching : Bool = false
     
-    @Published public private(set) var numberOfFavorites : Int
+    public private(set) var numberOfFavorites : Int
     
     @Published public private(set) var error: Error?
 

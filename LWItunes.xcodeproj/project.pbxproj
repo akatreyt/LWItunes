@@ -280,8 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				1CAC61AF25DCB3A200F8667A /* DashboardView.swift */,
-				1CAC627225DCD93A00F8667A /* DashboardViewModel.swift */,
 				1C5AB25025DD8A4200CBFFBA /* DashboardViewModelProtocol.swift */,
+				1CAC627225DCD93A00F8667A /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
