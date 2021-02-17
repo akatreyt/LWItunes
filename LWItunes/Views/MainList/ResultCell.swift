@@ -56,7 +56,7 @@ struct ResultCell: View {
                         toggleFavorite(onMedia: mediaResult)
                     }) {
                         Image(systemName: "star.circle")
-                            .foregroundColor(.blue)
+                            .foregroundColor(favoriteManager.checkIfFavorites(media: mediaResult) ? .yellow : .blue)
                     }
                     .buttonStyle(BorderlessButtonStyle())
                 }
@@ -96,8 +96,8 @@ struct ResultCell: View {
     private func fetchImageFor(media : MediaResult){
         imageCache.loadImage(forMedia: media, completion: { result in
             switch result{
-            case .success(let media):
-                print("recieved artwork for \(media.artworkUrl100)")
+            case .success(_):
+                break
             case .failure(let error):
                 print(error)
             }
