@@ -8,6 +8,7 @@
 import Foundation
 
 protocol DashboardViewModelProtocol {
+    var showOnlyFavorite : Bool { get }
     var error : Error? { get }
     var numberOfFavorites : Int { get }
     var favoriteManager : Favorable { get }
@@ -18,4 +19,5 @@ protocol DashboardViewModelProtocol {
     var networkIsFetching : Bool { get }
     func search()
     func filterMedia(forKey key : String)
+    func toggleOnlyShowFavorites()
 }

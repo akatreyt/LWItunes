@@ -10,6 +10,8 @@ import SwiftUI
 typealias SortedMediaInfo = [String: [MediaResult]]
 
 class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewModelProtocol{
+    
+    
     init() {
         self.favoriteManager = FavoriteManager(withStorageType: .Plist)
         self.numberOfFavorites = self.favoriteManager.favorites.count
@@ -29,6 +31,8 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
     }
         
     private var network = Network()
+    
+    @Published private(set) var showOnlyFavorite = false
     
     public private(set) var favoriteManager : Favorable
     
@@ -86,7 +90,14 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
     }
     
     private func resetSortedData(){
-        sortedData = sort(data: self.apiReturn!.results)
+        if let _apiReturn = apiReturn{
+            sortedData = sort(data: _apiReturn.results)
+            mediaKeys = sortedData.keys.sorted(by: <)
+        }
+    }
+    
+    private func sortFavoriteData(){
+        sortedData = sort(data: self.favoriteManager.favorites)
         mediaKeys = sortedData.keys.sorted(by: <)
     }
     
@@ -101,5 +112,18 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
     
     @objc private func updateFavorites(){
         self.numberOfFavorites = favoriteManager.favorites.count
+        
+        if showOnlyFavorite{
+           sortFavoriteData()
+        }
+    }
+    
+    public func toggleOnlyShowFavorites() {
+        showOnlyFavorite = !showOnlyFavorite
+        if showOnlyFavorite{
+           sortFavoriteData()
+        }else{
+            resetSortedData()
+        }
     }
 }

@@ -22,7 +22,7 @@ struct DashboardView<Network : Fetchable> : View {
                 VStack{
                     HStack{
                         TextField("Search", text: $viewModel.searchTerm)
-                            
+                        
                         Button("Search", action: {
                             viewModel.search()
                         })
@@ -38,8 +38,9 @@ struct DashboardView<Network : Fetchable> : View {
                     
                     if let _error = viewModel.error{
                         NoDataView(error: _error)
+                    }else if viewModel.showOnlyFavorite{
+                        ListView(viewModel: viewModel, mediaResults: viewModel.sortedData)
                     }else{
-                        
                         if let _ = viewModel.apiReturn{
                             if viewModel.sortedData.count > 0{
                                 ListView(viewModel: viewModel, mediaResults: viewModel.sortedData)
@@ -51,7 +52,18 @@ struct DashboardView<Network : Fetchable> : View {
                         }
                     }
                     Spacer()
-                    Text("\(viewModel.numberOfFavorites) Favorites")
+                    HStack{
+                        Text("\(viewModel.numberOfFavorites) Favorites")
+                        Spacer()
+                        Button(viewModel.showOnlyFavorite ? "Show all results" : "Show Favorites",
+                               action: {
+                                toggleFavoriteView()
+                               })
+                            .buttonStyle(BorderlessButtonStyle())
+                            .font(.body)
+                            .foregroundColor(.blue)
+                    }
+                    .padding()
                 }
             }
         }.actionSheet(isPresented: $showFilter, content: {
@@ -83,6 +95,10 @@ struct DashboardView<Network : Fetchable> : View {
     
     private func filterData(key : String){
         viewModel.filterMedia(forKey: key)
+    }
+    
+    private func toggleFavoriteView(){
+        viewModel.toggleOnlyShowFavorites()
     }
 }
 
