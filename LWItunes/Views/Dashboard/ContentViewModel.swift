@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  DashboardViewModel.swift
 //  LWItunes
 //
 //  Created by Gary Tartt on 2/16/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ContentViewModel<Network : Fetchable> : ObservableObject{
+class DashboardViewModel<Network : Fetchable> : ObservableObject{
     private var network = Network()
     
     private var apiReturn : APIReturn?

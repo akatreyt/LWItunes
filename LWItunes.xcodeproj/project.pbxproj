@@ -232,15 +232,55 @@
 		1CAC625525DCCE9400F8667A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1CAC625625DCCE9E00F8667A /* SearchView.swift */,
-				1CAC625B25DCCEAA00F8667A /* ListView.swift */,
-				1CAC626025DCCEB500F8667A /* NoDataView.swift */,
-				1CAC626525DCCEC600F8667A /* LoadingView.swift */,
-				1CAC61AF25DCB3A200F8667A /* ContentView.swift */,
-				1CAC626D25DCD25C00F8667A /* ResultCell.swift */,
-				1CAC627225DCD93A00F8667A /* ContentViewModel.swift */,
+				1CAC629125DD64A400F8667A /* Dashboard */,
+				1CAC629025DD648C00F8667A /* Loading */,
+				1CAC628F25DD648600F8667A /* NoData */,
+				1CAC628E25DD647F00F8667A /* MainList */,
+				1CAC628D25DD647700F8667A /* Search */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1CAC628D25DD647700F8667A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC625625DCCE9E00F8667A /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1CAC628E25DD647F00F8667A /* MainList */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC625B25DCCEAA00F8667A /* ListView.swift */,
+				1CAC626D25DCD25C00F8667A /* ResultCell.swift */,
+			);
+			path = MainList;
+			sourceTree = "<group>";
+		};
+		1CAC628F25DD648600F8667A /* NoData */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC626025DCCEB500F8667A /* NoDataView.swift */,
+			);
+			path = NoData;
+			sourceTree = "<group>";
+		};
+		1CAC629025DD648C00F8667A /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC626525DCCEC600F8667A /* LoadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		1CAC629125DD64A400F8667A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC61AF25DCB3A200F8667A /* ContentView.swift */,
+				1CAC627225DCD93A00F8667A /* ContentViewModel.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

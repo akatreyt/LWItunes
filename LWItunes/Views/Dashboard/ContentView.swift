@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DashboardView.swift
 //  LWItunes
 //
 //  Created by Gary Tartt on 2/16/21.
@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 import Combine
 
-struct ContentView <Network : Fetchable> : View {
-    @ObservedObject var viewModel = ContentViewModel<Network>()
+struct DashboardView<Network : Fetchable> : View {
+    @ObservedObject var viewModel = DashboardViewModel<Network>()
     
     var body: some View {
         ZStack{
@@ -47,10 +47,10 @@ struct ContentView <Network : Fetchable> : View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView<MockNetwork>()
+        DashboardView<MockNetwork>()
         
-        ContentView<MockNetwork>().preferredColorScheme(.dark)
+        DashboardView<MockNetwork>().preferredColorScheme(.dark)
     }
 }
