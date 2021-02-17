@@ -7,7 +7,16 @@
 
 import Foundation
 
-protocol Favorable  {
+enum StorageType{
+    case Plist
+}
+
+protocol Favorable {
+    init(withStorageType storageType : StorageType)
+    var storageType : StorageType { get }
     func checkIfFavorites(media : MediaResult) -> Bool
     var favorites : [MediaResult] { get }
+    
+    func save(favorable fav : MediaResult) throws
+    func getFavorites() throws
 }

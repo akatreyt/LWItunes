@@ -25,7 +25,7 @@ struct ListView: View {
                             content: {
                                 ForEach(viewModel.sortedData[key]!) { result in
                                     ResultCell(mediaResult: result,
-                                               storageManager: viewModel.storageManger)
+                                               favoriteManager: viewModel.favoriteManager)
                                 }
                             })
                 }
@@ -35,9 +35,9 @@ struct ListView: View {
 }
 
 struct ListView_Previews: PreviewProvider {
-    static var viewModel : DashboardViewModel<MockNetwork, PlistStorage> {
+    static var viewModel : DashboardViewModel<MockNetwork> {
         get{
-            let viewModel = DashboardViewModel<MockNetwork, PlistStorage>()
+            let viewModel = DashboardViewModel<MockNetwork>()
             viewModel.search()
             return viewModel
         }

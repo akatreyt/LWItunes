@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 import Combine
 
-struct DashboardView<Network : Fetchable, Storage : Storable> : View {
-    @ObservedObject var viewModel = DashboardViewModel<Network, PlistStorage>()
+struct DashboardView<Network : Fetchable> : View {
+    @ObservedObject var viewModel = DashboardViewModel<Network>()
     @State private var showFilter = false
     
     var body: some View {
@@ -46,7 +46,7 @@ struct DashboardView<Network : Fetchable, Storage : Storable> : View {
                         SearchView()
                     }
                     Spacer()
-                    Text("\(viewModel.favorites.count) Favorites")
+                    Text("\(viewModel.numberOfFavorites) Favorites")
                 }
             }
         }.actionSheet(isPresented: $showFilter, content: {
@@ -83,8 +83,8 @@ struct DashboardView<Network : Fetchable, Storage : Storable> : View {
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView<MockNetwork, PlistStorage>()
+        DashboardView<MockNetwork>()
         
-        DashboardView<MockNetwork, PlistStorage>().preferredColorScheme(.dark)
+        DashboardView<MockNetwork>().preferredColorScheme(.dark)
     }
 }

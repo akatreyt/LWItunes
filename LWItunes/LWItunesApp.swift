@@ -13,7 +13,7 @@ struct LWItunesApp: App {
 
     var body: some Scene {
         WindowGroup {
-            DashboardView<MockNetwork, PlistStorage>()
+            DashboardView<MockNetwork>()
         }
     }
 }

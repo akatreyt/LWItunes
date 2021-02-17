@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C5AB24C25DD81E300CBFFBA /* NotifcationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5AB24B25DD81E300CBFFBA /* NotifcationCenterExtension.swift */; };
 		1C5AB25125DD8A4200CBFFBA /* DashboardViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5AB25025DD8A4200CBFFBA /* DashboardViewModelProtocol.swift */; };
-		1C5AB26A25DD91B400CBFFBA /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5AB26925DD91B400CBFFBA /* Favorites.swift */; };
+		1C5AB26A25DD91B400CBFFBA /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5AB26925DD91B400CBFFBA /* FavoriteManager.swift */; };
 		1C921FE625DD77250057D0EA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61B625DCB3A300F8667A /* Persistence.swift */; };
 		1CAC61AE25DCB3A200F8667A /* LWItunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */; };
 		1CAC61B025DCB3A200F8667A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61AF25DCB3A200F8667A /* DashboardView.swift */; };
@@ -33,10 +33,6 @@
 		1CAC621525DCB55300F8667A /* result1s.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CAC621325DCB55300F8667A /* result1s.json */; };
 		1CAC621E25DCB6F200F8667A /* Favorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC621D25DCB6F200F8667A /* Favorable.swift */; };
 		1CAC621F25DCB6F200F8667A /* Favorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC621D25DCB6F200F8667A /* Favorable.swift */; };
-		1CAC622725DCB74A00F8667A /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC622625DCB74A00F8667A /* Storable.swift */; };
-		1CAC622825DCB74A00F8667A /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC622625DCB74A00F8667A /* Storable.swift */; };
-		1CAC622D25DCB77700F8667A /* PlistStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC622C25DCB77700F8667A /* PlistStorage.swift */; };
-		1CAC622E25DCB77700F8667A /* PlistStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC622C25DCB77700F8667A /* PlistStorage.swift */; };
 		1CAC623925DCBB6300F8667A /* APIReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC623825DCBB6300F8667A /* APIReturn.swift */; };
 		1CAC625725DCCE9E00F8667A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC625625DCCE9E00F8667A /* SearchView.swift */; };
 		1CAC625C25DCCEAA00F8667A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC625B25DCCEAA00F8667A /* ListView.swift */; };
@@ -69,7 +65,7 @@
 /* Begin PBXFileReference section */
 		1C5AB24B25DD81E300CBFFBA /* NotifcationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationCenterExtension.swift; sourceTree = "<group>"; };
 		1C5AB25025DD8A4200CBFFBA /* DashboardViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelProtocol.swift; sourceTree = "<group>"; };
-		1C5AB26925DD91B400CBFFBA /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		1C5AB26925DD91B400CBFFBA /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
 		1CAC61AA25DCB3A200F8667A /* LWItunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LWItunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWItunesApp.swift; sourceTree = "<group>"; };
 		1CAC61AF25DCB3A200F8667A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -91,8 +87,6 @@
 		1CAC620C25DCB52A00F8667A /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 		1CAC621325DCB55300F8667A /* result1s.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = result1s.json; sourceTree = "<group>"; };
 		1CAC621D25DCB6F200F8667A /* Favorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorable.swift; sourceTree = "<group>"; };
-		1CAC622625DCB74A00F8667A /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
-		1CAC622C25DCB77700F8667A /* PlistStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistStorage.swift; sourceTree = "<group>"; };
 		1CAC623225DCB8EA00F8667A /* tmpCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmpCD.swift; sourceTree = "<group>"; };
 		1CAC623825DCBB6300F8667A /* APIReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReturn.swift; sourceTree = "<group>"; };
 		1CAC625625DCCE9E00F8667A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -129,17 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C921FE525DD76C90057D0EA /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				1CAC61B625DCB3A300F8667A /* Persistence.swift */,
-				1CAC622625DCB74A00F8667A /* Storable.swift */,
-				1CAC622C25DCB77700F8667A /* PlistStorage.swift */,
-				1CAC623225DCB8EA00F8667A /* tmpCD.swift */,
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		1CAC61A125DCB3A200F8667A = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +149,6 @@
 				1CAC61E025DCB3C800F8667A /* Models */,
 				1CAC625525DCCE9400F8667A /* Views */,
 				1CAC621C25DCB6E300F8667A /* Favorite */,
-				1C921FE525DD76C90057D0EA /* Storage */,
 				1CAC61F925DCB49000F8667A /* Network */,
 				1CAC621225DCB53900F8667A /* MockData */,
 				1CAC61AD25DCB3A200F8667A /* LWItunesApp.swift */,
@@ -239,7 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				1CAC621D25DCB6F200F8667A /* Favorable.swift */,
-				1C5AB26925DD91B400CBFFBA /* Favorites.swift */,
+				1C5AB26925DD91B400CBFFBA /* FavoriteManager.swift */,
+				1CAC623225DCB8EA00F8667A /* tmpCD.swift */,
+				1CAC61B625DCB3A300F8667A /* Persistence.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -434,14 +418,12 @@
 				1CAC61BA25DCB3A300F8667A /* LWItunes.xcdatamodeld in Sources */,
 				1C5AB25125DD8A4200CBFFBA /* DashboardViewModelProtocol.swift in Sources */,
 				1CAC61E225DCB3E800F8667A /* MediaResult.swift in Sources */,
-				1CAC622D25DCB77700F8667A /* PlistStorage.swift in Sources */,
 				1CAC627325DCD93A00F8667A /* DashboardViewModel.swift in Sources */,
 				1CAC627C25DCE1CF00F8667A /* Network.swift in Sources */,
 				1CAC61B725DCB3A300F8667A /* Persistence.swift in Sources */,
 				1CAC623925DCBB6300F8667A /* APIReturn.swift in Sources */,
-				1C5AB26A25DD91B400CBFFBA /* Favorites.swift in Sources */,
+				1C5AB26A25DD91B400CBFFBA /* FavoriteManager.swift in Sources */,
 				1CAC626E25DCD25C00F8667A /* ResultCell.swift in Sources */,
-				1CAC622725DCB74A00F8667A /* Storable.swift in Sources */,
 				1CAC61B025DCB3A200F8667A /* DashboardView.swift in Sources */,
 				1CAC621E25DCB6F200F8667A /* Favorable.swift in Sources */,
 				1CAC61EB25DCB44500F8667A /* ResultKind.swift in Sources */,
@@ -466,9 +448,7 @@
 				1CAC620E25DCB52A00F8667A /* MockNetwork.swift in Sources */,
 				1CAC61EC25DCB44500F8667A /* ResultKind.swift in Sources */,
 				1CAC61C525DCB3A300F8667A /* LWItunesTests.swift in Sources */,
-				1CAC622E25DCB77700F8667A /* PlistStorage.swift in Sources */,
 				1C921FE625DD77250057D0EA /* Persistence.swift in Sources */,
-				1CAC622825DCB74A00F8667A /* Storable.swift in Sources */,
 				1CAC627425DCD93A00F8667A /* DashboardViewModel.swift in Sources */,
 				1CAC621F25DCB6F200F8667A /* Favorable.swift in Sources */,
 				1CAC620525DCB4D400F8667A /* Endpoints.swift in Sources */,

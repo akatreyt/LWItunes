@@ -9,11 +9,11 @@ import SwiftUI
 
 typealias SortedMediaInfo = [String: [MediaResult]]
 
-class DashboardViewModel<Network : Fetchable, Storage : Storable> : ObservableObject, DashboardViewModelProtocol{
+class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewModelProtocol{
     
     init() {
-        self.storageManger = Storage()
-        self.favorites = [MediaResult]()
+        self.favoriteManager = FavoriteManager(withStorageType: .Plist)
+        self.numberOfFavorites = self.favoriteManager.favorites.count
         
         updateFavorites()
 
@@ -28,10 +28,10 @@ class DashboardViewModel<Network : Fetchable, Storage : Storable> : ObservableOb
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    public var storageManger: Storable
-    
+        
     private var network = Network()
+    
+    public private(set) var favoriteManager : Favorable
     
     public private(set) var apiReturn : APIReturn?{
         didSet{
@@ -44,12 +44,12 @@ class DashboardViewModel<Network : Fetchable, Storage : Storable> : ObservableOb
     public private(set) var sortedData = SortedMediaInfo()
         
     public let filterResetKey = "Reset"
-    
-    @Published public private(set) var favorites : [MediaResult]
-    
+        
     @Published public var searchTerm = ""
     
     @Published public private(set) var networkIsFetching : Bool = false
+    
+    @Published public private(set) var numberOfFavorites : Int
     
     public func search(){
         do{
@@ -98,10 +98,6 @@ class DashboardViewModel<Network : Fetchable, Storage : Storable> : ObservableOb
     }
     
     @objc private func updateFavorites(){
-        do{
-            self.favorites = try storageManger.getFavorites()
-        }catch{
-            fatalError()
-        }
+        self.numberOfFavorites = favoriteManager.favorites.count
     }
 }

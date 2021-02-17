@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ResultCell: View {
     let mediaResult : MediaResult
-    let storageManager : Storable
+    let favoriteManager : Favorable
     
     var body: some View {
         VStack{
@@ -59,7 +59,7 @@ struct ResultCell: View {
     
     private func toggleFavorite(onMedia media : MediaResult){
         do{
-            try storageManager.save(favorable: media)
+            try favoriteManager.save(favorable: media)
             
             NotificationCenter.default.post(name: .UpdateFavorites, object: nil)
         }catch{
@@ -72,10 +72,12 @@ struct ResultCell: View {
 struct ResultCell_Previews: PreviewProvider {
     static var previews: some View {
         let apiResults = MockNetwork().getMockData()
-        let storageManager = PlistStorage()
+        let favoriteManager = FavoriteManager(withStorageType: .Plist)
         
-        ResultCell(mediaResult: apiResults.results[0], storageManager: storageManager)
+        ResultCell(mediaResult: apiResults.results[0],
+                   favoriteManager: favoriteManager)
         
-        ResultCell(mediaResult: apiResults.results[0], storageManager: storageManager).preferredColorScheme(.dark)
+        ResultCell(mediaResult: apiResults.results[0],
+                   favoriteManager: favoriteManager).preferredColorScheme(.dark)
     }
 }
