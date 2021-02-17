@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class ImageCache : ObservableObject{
+final class ImageCache : ObservableObject{
     @Published var imageCache = [String : Data]()
     
     private var currentlyFetching =  [String]()

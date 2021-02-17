@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum EndPoint : String{
+public enum EndPoint : String{
     case search = "https://itunes.apple.com/search?term="
 }

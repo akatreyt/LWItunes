@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Network : Fetchable{
+final class Network : Fetchable{
     var isFetching: Bool = false
 
     required init() {}
     
-    func fetchFrom(endpoint ep: EndPoint, forTerm term: String, completionHandler comp: @escaping (Result<APIReturn, NetworkError>) -> Void) throws {
+    public func fetchFrom(endpoint ep: EndPoint, forTerm term: String, completionHandler comp: @escaping (Result<APIReturn, NetworkError>) -> Void) throws {
         
         guard let encodedStr = term.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             comp(.failure(.InvalidURL(EndPoint.search.rawValue+term)))

@@ -9,7 +9,7 @@ import SwiftUI
 
 typealias SortedMediaInfo = [String: [MediaResult]]
 
-class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewModelProtocol{
+final class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewModelProtocol{
     
     init() {
         self.favoriteManager = FavoriteManager(withStorageType: .Plist)
@@ -28,10 +28,22 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-        
-    private var network = Network()
     
-    @Published private(set) var showOnlyFavorite = false
+    @Published public var searchTerm = ""
+    
+    @Published public private(set) var showOnlyFavorite = false
+
+    @Published public private(set) var networkIsFetching : Bool = false
+    
+    @Published public private(set) var sortedData = SortedMediaInfo()
+    
+    @Published public private(set) var error: Error?
+    
+    private var network = Network()
+
+    public private(set) var mediaKeys = [String]()
+
+    public private(set) var numberOfFavorites : Int
     
     public private(set) var favoriteManager : Favorable
     
@@ -41,20 +53,8 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
         }
     }
     
-    public private(set) var mediaKeys = [String]()
-
-    @Published public private(set) var sortedData = SortedMediaInfo()
-        
     public let filterResetKey = "Reset"
-        
-    @Published public var searchTerm = ""
     
-    @Published public private(set) var networkIsFetching : Bool = false
-    
-    public private(set) var numberOfFavorites : Int
-    
-    @Published public private(set) var error: Error?
-
     public func search(){
         do{
             networkIsFetching = true
@@ -74,6 +74,24 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
                                   })
         }catch{
             print(error)
+        }
+    }
+    
+    public func filterMedia(forKey key : String){
+        resetSortedData()
+        if key != filterResetKey{
+            var tmpData = SortedMediaInfo()
+            tmpData[key] = sortedData[key]
+            sortedData = tmpData
+        }
+    }
+    
+    public func toggleOnlyShowFavorites() {
+        showOnlyFavorite = !showOnlyFavorite
+        if showOnlyFavorite{
+           sortFavoriteData()
+        }else{
+            resetSortedData()
         }
     }
     
@@ -100,29 +118,11 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
         mediaKeys = sortedData.keys.sorted(by: <)
     }
     
-    public func filterMedia(forKey key : String){
-        resetSortedData()
-        if key != filterResetKey{
-            var tmpData = SortedMediaInfo()
-            tmpData[key] = sortedData[key]
-            sortedData = tmpData
-        }
-    }
-    
     @objc private func updateFavorites(){
         self.numberOfFavorites = favoriteManager.favorites.count
         
         if showOnlyFavorite{
            sortFavoriteData()
-        }
-    }
-    
-    public func toggleOnlyShowFavorites() {
-        showOnlyFavorite = !showOnlyFavorite
-        if showOnlyFavorite{
-           sortFavoriteData()
-        }else{
-            resetSortedData()
         }
     }
 }

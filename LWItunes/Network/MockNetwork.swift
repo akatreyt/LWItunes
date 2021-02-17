@@ -11,7 +11,7 @@ private enum MockFileLocations : String{
     case TestResults = "result1s.json"
 }
 
-class MockNetwork : Fetchable{
+final class MockNetwork : Fetchable{
     var isFetching: Bool = false
     
     required init() {}
@@ -27,7 +27,7 @@ class MockNetwork : Fetchable{
         }
     }
     
-    func fetchFrom(endpoint ep : EndPoint,
+    internal func fetchFrom(endpoint ep : EndPoint,
                    forTerm term : String,
                    completionHandler comp : @escaping (Result<APIReturn, NetworkError>) -> Void) throws{
         do{

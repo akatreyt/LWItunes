@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum StorageType{
+public enum StorageType{
     case Plist
     case Memory
     case CoreData

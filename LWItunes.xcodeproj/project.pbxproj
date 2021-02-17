@@ -22,8 +22,6 @@
 		1CAC61D025DCB3A300F8667A /* LWItunesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61CF25DCB3A300F8667A /* LWItunesUITests.swift */; };
 		1CAC61E225DCB3E800F8667A /* MediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61E125DCB3E800F8667A /* MediaResult.swift */; };
 		1CAC61E325DCB3E800F8667A /* MediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61E125DCB3E800F8667A /* MediaResult.swift */; };
-		1CAC61EB25DCB44500F8667A /* ResultKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61EA25DCB44500F8667A /* ResultKind.swift */; };
-		1CAC61EC25DCB44500F8667A /* ResultKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61EA25DCB44500F8667A /* ResultKind.swift */; };
 		1CAC61FB25DCB49F00F8667A /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61FA25DCB49F00F8667A /* Fetchable.swift */; };
 		1CAC61FC25DCB49F00F8667A /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC61FA25DCB49F00F8667A /* Fetchable.swift */; };
 		1CAC620425DCB4D400F8667A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC620325DCB4D400F8667A /* Endpoints.swift */; };
@@ -83,7 +81,6 @@
 		1CAC61CF25DCB3A300F8667A /* LWItunesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWItunesUITests.swift; sourceTree = "<group>"; };
 		1CAC61D125DCB3A300F8667A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CAC61E125DCB3E800F8667A /* MediaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaResult.swift; sourceTree = "<group>"; };
-		1CAC61EA25DCB44500F8667A /* ResultKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultKind.swift; sourceTree = "<group>"; };
 		1CAC61FA25DCB49F00F8667A /* Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		1CAC620325DCB4D400F8667A /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		1CAC620C25DCB52A00F8667A /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
@@ -192,7 +189,6 @@
 		1CAC61E025DCB3C800F8667A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1CAC61EA25DCB44500F8667A /* ResultKind.swift */,
 				1CAC623825DCBB6300F8667A /* APIReturn.swift */,
 				1CAC61E125DCB3E800F8667A /* MediaResult.swift */,
 			);
@@ -430,7 +426,6 @@
 				1CAC626E25DCD25C00F8667A /* ResultCell.swift in Sources */,
 				1CAC61B025DCB3A200F8667A /* DashboardView.swift in Sources */,
 				1CAC621E25DCB6F200F8667A /* Favorable.swift in Sources */,
-				1CAC61EB25DCB44500F8667A /* ResultKind.swift in Sources */,
 				1CAC620D25DCB52A00F8667A /* MockNetwork.swift in Sources */,
 				1CAC625725DCCE9E00F8667A /* SearchView.swift in Sources */,
 				1C5AB24C25DD81E300CBFFBA /* NotifcationCenterExtension.swift in Sources */,
@@ -450,7 +445,6 @@
 				1CAC61E325DCB3E800F8667A /* MediaResult.swift in Sources */,
 				1CAC627D25DCE1CF00F8667A /* Network.swift in Sources */,
 				1CAC620E25DCB52A00F8667A /* MockNetwork.swift in Sources */,
-				1CAC61EC25DCB44500F8667A /* ResultKind.swift in Sources */,
 				1CAC61C525DCB3A300F8667A /* LWItunesTests.swift in Sources */,
 				1C921FE625DD77250057D0EA /* Persistence.swift in Sources */,
 				1CAC627425DCD93A00F8667A /* DashboardViewModel.swift in Sources */,

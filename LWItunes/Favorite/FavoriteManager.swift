@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 
-class FavoriteManager : ObservableObject, Favorable{
+final class FavoriteManager : ObservableObject, Favorable{
     var storageType: StorageType
     @Published var favorites = [MediaResult](){
         didSet{
@@ -28,7 +28,7 @@ class FavoriteManager : ObservableObject, Favorable{
         }
     }
     
-    func checkIfFavorites(media : MediaResult) -> Bool{
+    public func checkIfFavorites(media : MediaResult) -> Bool{
         if favorites.contains(where: {
             $0.trackId == media.trackId
         }){
@@ -37,7 +37,7 @@ class FavoriteManager : ObservableObject, Favorable{
         return false
     }
 
-    func save(favorable fav: MediaResult) throws {
+    public func save(favorable fav: MediaResult) throws {
         do{
             switch storageType {
             case .Plist:
@@ -75,7 +75,7 @@ class FavoriteManager : ObservableObject, Favorable{
         }
     }
     
-    func getFavorites() throws {
+    public func getFavorites() throws {
         do{
             switch storageType {
             case .Plist:
