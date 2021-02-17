@@ -36,14 +36,19 @@ struct DashboardView<Network : Fetchable> : View {
                     
                     Spacer()
                     
-                    if let _ = viewModel.apiReturn{
-                        if viewModel.sortedData.count > 0{
-                            ListView(viewModel: viewModel)
-                        }else{
-                            NoDataView()
-                        }
+                    if let _error = viewModel.error{
+                        NoDataView(error: _error)
                     }else{
-                        SearchView()
+                        
+                        if let _ = viewModel.apiReturn{
+                            if viewModel.sortedData.count > 0{
+                                ListView(viewModel: viewModel)
+                            }else{
+                                NoDataView()
+                            }
+                        }else{
+                            SearchView()
+                        }
                     }
                     Spacer()
                     Text("\(viewModel.numberOfFavorites) Favorites")

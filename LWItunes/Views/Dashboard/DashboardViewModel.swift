@@ -10,7 +10,6 @@ import SwiftUI
 typealias SortedMediaInfo = [String: [MediaResult]]
 
 class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewModelProtocol{
-    
     init() {
         self.favoriteManager = FavoriteManager(withStorageType: .Plist)
         self.numberOfFavorites = self.favoriteManager.favorites.count
@@ -51,22 +50,25 @@ class DashboardViewModel<Network : Fetchable> : ObservableObject, DashboardViewM
     
     @Published public private(set) var numberOfFavorites : Int
     
+    @Published public private(set) var error: Error?
+
     public func search(){
         do{
             networkIsFetching = true
             try network.fetchFrom(endpoint: EndPoint.search,
                                   forTerm: searchTerm,
                                   completionHandler: { [weak self] result in
-                                    switch result{
-                                    
-                                    case .success(let apiResults):
-                                        self?.apiReturn = apiResults
-                                    case .failure(let error):
-                                        print(error)
+                                    DispatchQueue.main.async {
+                                        self?.networkIsFetching = false
+                                        
+                                        switch result{
+                                        case .success(let apiResults):
+                                            self?.apiReturn = apiResults
+                                        case .failure(let error):
+                                            self?.error = error
+                                        }
                                     }
                                   })
-            
-            networkIsFetching = false
         }catch{
             print(error)
         }

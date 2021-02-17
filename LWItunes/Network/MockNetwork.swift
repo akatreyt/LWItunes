@@ -18,11 +18,9 @@ class MockNetwork : Fetchable{
     
     public func getMockData() -> APIReturn{
         do{
-            isFetching = true
             let path = Bundle.main.bundleURL.appendingPathComponent(MockFileLocations.TestResults.rawValue)
             let data = try Data.init(contentsOf: path)
             let testResults = try JSONDecoder().decode(APIReturn.self, from: data)
-            isFetching = false
             return testResults
         }catch{
             fatalError()
@@ -31,14 +29,12 @@ class MockNetwork : Fetchable{
     
     func fetchFrom(endpoint ep : EndPoint,
                    forTerm term : String,
-                   completionHandler comp : @escaping (Result<APIReturn, Error>) -> Void) throws{
+                   completionHandler comp : @escaping (Result<APIReturn, NetworkError>) -> Void) throws{
         do{
-            isFetching = true
             let path = Bundle.main.bundleURL.appendingPathComponent(MockFileLocations.TestResults.rawValue)
             let data = try Data.init(contentsOf: path)
             let testResults = try JSONDecoder().decode(APIReturn.self, from: data)
             comp(.success(testResults))
-            isFetching = false
         }catch{
             fatalError()
         }

@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct NoDataView : View {
+    var error : Error?
+    
     var body: some View {
         VStack{
             Text("No Data")
                 .fontWeight(.bold)
                 .font(.title)
+            if let _error = error{
+                Text(_error.localizedDescription)
+                    .fontWeight(.bold)
+                    .font(.title)
+            }
         }
     }
 }

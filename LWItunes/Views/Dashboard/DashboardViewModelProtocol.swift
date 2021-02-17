@@ -8,6 +8,7 @@
 import Foundation
 
 protocol DashboardViewModelProtocol {
+    var error : Error? { get }
     var numberOfFavorites : Int { get }
     var favoriteManager : Favorable { get }
     var apiReturn : APIReturn? { get }

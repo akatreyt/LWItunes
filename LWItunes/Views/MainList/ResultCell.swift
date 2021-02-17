@@ -18,10 +18,10 @@ struct ResultCell: View {
                 Image(systemName: "arrow.up.message")
                     .frame(width:50, height:50)
                 VStack(alignment: .leading){
-                    Text("\(mediaResult.trackName)")
+                    Text("\(mediaResult.trackName ?? "N/A")")
                         .fontWeight(.medium)
                         .font(.title)
-                    Text("\(mediaResult.primaryGenreName)")
+                    Text("\(mediaResult.primaryGenreName ?? "N/A")")
                         .fontWeight(.light)
                         .font(.body)
                 }
@@ -30,7 +30,9 @@ struct ResultCell: View {
             HStack{
                 HStack(){
                     Button("Click here for Media", action: {
-                        open(link: mediaResult.trackViewUrl)
+                        if let track = mediaResult.trackViewUrl{
+                            open(link: track)
+                        }
                     })
                     .buttonStyle(BorderlessButtonStyle())
                     .font(.body)

@@ -7,10 +7,18 @@
 
 import Foundation
 
+enum NetworkError : Error{
+    case NoData
+    case InvalidResponse
+    case InvalidHTTPCode(Int)
+    case ErrorDecoding(Error)
+    case InvalidURL(String)
+}
+
+
 protocol Fetchable {
     init()
-    var isFetching : Bool { get }
     func fetchFrom(endpoint ep : EndPoint,
                    forTerm term : String,
-                   completionHandler comp : @escaping (Result<APIReturn, Error>) -> Void) throws
+                   completionHandler comp : @escaping (Result<APIReturn, NetworkError>) -> Void) throws
 }
