@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ListView: View {
-    var apiReturn : APIReturn
+    var results : [Result]
     
     var body: some View {
         VStack{
             List {
-                ForEach(apiReturn.results) { result in
+                ForEach(results) { result in
                     ResultCell(result: result)
                 }
             }
-            Text("\(apiReturn.resultCount) Results")
+            Text("\(results.count) Results")
         }
     }
 }
@@ -26,8 +26,8 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         let results = try! MockEndPoint().fetchFrom(endpoint: EndPoint.search, forTerm: "test")
-        ListView(apiReturn: results)
+        ListView(results: results.results)
         
-        ListView(apiReturn: results).preferredColorScheme(.dark)
+        ListView(results: results.results).preferredColorScheme(.dark)
     }
 }

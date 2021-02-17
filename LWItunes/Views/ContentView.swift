@@ -10,25 +10,20 @@ import CoreData
 import Combine
 
 struct ContentView <Network : Fetchable> : View {
-    @State var network = Network()
-    
-    // when view is init will be nil, and will show the search screen
-    @State fileprivate var apiReturn : APIReturn?
-    
-    @State private var searchTerm = ""
+    @ObservedObject var viewModel = ContentViewModel<Network>()
     
     var body: some View {
         ZStack{
-            if network.isFetching{
+            if viewModel.networkIsFetching{
                 LoadingView()
             }
             else{
                 VStack{
                     HStack{
-                        TextField("Search", text: $searchTerm)
+                        TextField("Search", text: $viewModel.searchTerm)
                             
                         Button("Search", action: {
-                            search(forTerm: searchTerm)
+                            viewModel.search()
                         })
                     }.padding()
                     
@@ -36,9 +31,9 @@ struct ContentView <Network : Fetchable> : View {
                     
                     Spacer()
                     
-                    if let _apiReturn = apiReturn{
-                        if _apiReturn.resultCount > 0{
-                            ListView(apiReturn: _apiReturn)
+                    if let returnData = viewModel.returnData{
+                        if returnData.count > 0{
+                            ListView(results: returnData)
                         }else{
                             NoDataView()
                         }
@@ -48,15 +43,6 @@ struct ContentView <Network : Fetchable> : View {
                     Spacer()
                 }
             }
-        }
-    }
-    
-    private func search(forTerm term : String){
-        do{
-            apiReturn = try network.fetchFrom(endpoint: EndPoint.search,
-                                           forTerm: term)
-        }catch{
-            print(error)
         }
     }
 }
