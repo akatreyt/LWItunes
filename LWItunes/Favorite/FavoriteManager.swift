@@ -42,6 +42,10 @@ class FavoriteManager : ObservableObject, Favorable{
             switch storageType {
             case .Plist:
                 try saveToPlist(favorable: fav)
+            case .Memory:
+                fatalError("Not implemented")
+            case .CoreData:
+                fatalError("Not implemented")
             }
             try getFavorites()
         }catch{
@@ -76,6 +80,10 @@ class FavoriteManager : ObservableObject, Favorable{
             switch storageType {
             case .Plist:
                 self.favorites = try getFromPlist()
+            case .Memory:
+                fatalError("Not implemented")
+            case .CoreData:
+                fatalError("Not implemented")
             }
         }catch{
             fatalError()

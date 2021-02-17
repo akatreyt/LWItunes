@@ -9,6 +9,8 @@ import Foundation
 
 enum StorageType{
     case Plist
+    case Memory
+    case CoreData
 }
 
 protocol Favorable {
